@@ -24,6 +24,7 @@ build: ${c_example_1}.c ${c_main_1}.c ${bubble}.c ${obj1}.c ${obj2}.c ${bubble_n
 
 run: $(obj)
 	@./$(obj) 5
+	@echo 'run ${obj} done!'
 
 read:
 	@cat ./optimize_programmer.md
@@ -35,6 +36,7 @@ build_exp_1: ${obj1}.c
 
 run_exp_1:
 	@./${obj1}
+	@echo 'run ${obj1} done!'
 
 build_exp_2: ${obj2}.c
 	@${CC} -o ${obj2} ${obj2}.c
@@ -62,6 +64,6 @@ run_bubble_no:
 
 clean:
 	@-rm $(obj) ${obj1} ${obj2} ${bubble} ${bubble_no}
-	@echo "Clean done!"
+	@echo "clean done!"
 
 
