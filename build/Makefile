@@ -27,7 +27,7 @@ run: $(obj)
 	@echo 'run ${obj} done!'
 
 read:
-	@cat ./optimize_programmer.md
+	@cat ./optimize_program.md
 
 
 build_exp_1: ${obj1}.c
