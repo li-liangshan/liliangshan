@@ -104,10 +104,10 @@ echo | awk -v VARIABLE=${var} '{ print VARIABLE }'
 # 另一种传递外部变量方法：
 var1="aaa"
 var2="bbb"
-echo | awk '{ print v1,v2 }' v1=$var1 v2=$var2
+echo | awk '{ print v1,v2 }' v1=${var1} v2=${var2}
 
 # 当输入来自于文件时使用：
-awk '{ print v1,v2 }' v1=$var1 v2=$var2 filename
+awk '{ print v1,v2 }' v1=${var1} v2=${var2} filename
 
 # 以上方法中，变量之间用空格分隔作为awk的命令行参数跟随在BEGIN、{}和END语句块之后。
 
