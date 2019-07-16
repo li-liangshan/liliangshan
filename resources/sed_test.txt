@@ -1,0 +1,7 @@
+northwest western southwest southern southeast eastern  northeast north central
+NW        Charles Main      WE       Sharon    Gray     SW        Lewis Dalsass
+SO        Suan    Chin      SE       Patricia  Hemenway EA        TB    Savage
+NE        AM      Main      Jr.NO    Margot    Weber    CT        Ann   Stephens
+3.0 .98 3 34 5.3 .97 5 23 2.7 .8 2 18
+5.1 .95 4 15 4.0 .7 4 17 4.4 .84 5 20
+5.1 .94 3 13 4.5 .89 5 9 5.7 .94 5 13
