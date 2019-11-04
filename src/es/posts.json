@@ -1,0 +1,112 @@
+[
+  {
+    "mappings": {
+      "post": {
+        "properties": {
+          "id": {
+            "type": "long",
+            "store": "yes",
+            "precision_step": "0"
+          },
+          "name": {
+            "type": "string",
+            "store": "yes",
+            "index": "analyzed"
+          },
+          "published": {
+            "type": "date",
+            "store": "yes",
+            "precision_step": "0"
+          },
+          "contents": {
+            "type": "string",
+            "store": "no",
+            "index": "analyzed"
+          }
+        }
+      }
+    }
+  },
+  {
+    "mappings": {
+      "post": {
+        "properties": {
+          "id": {
+            "type": "long",
+            "store": "yes",
+            "precision_step": "0"
+          },
+          "name": {
+            "type": "string",
+            "store": "yes",
+            "index": "analyzed"
+          },
+          "published": {
+            "type": "date",
+            "store": "yes",
+            "precision_step": "0"
+          },
+          "contents": {
+            "type": "string",
+            "store": "no",
+            "index": "analyzed"
+          }
+        }
+      },
+      "user": {
+        "properties": {
+          "id": {
+            "type": "long",
+            "store": "yes",
+            "precision_step": "0"
+          },
+          "name": {
+            "type": "string",
+            "store": "yes",
+            "index": "analyzed"
+          }
+        }
+      }
+    }
+  },
+  {
+    "settings": {
+      "index": {
+        "analysis": {
+          "analyzer": {
+            "en": {
+              "tokenizer": "standard",
+              "filter": [
+                "asciifolding",
+                "lowercase",
+                "ourEnglishFilter"
+              ]
+            }
+          },
+          "filter": {
+            "ourEnglishFilter": {
+              "type": "kstem"
+            }
+          }
+        }
+      }
+    },
+    "mappings": {
+      "post": {
+        "properties": {
+          "id": {
+            "type": "long",
+            "store": "yes",
+            "precision_step": "0"
+          },
+          "name": {
+            "type": "string",
+            "store": "yes",
+            "index": "analyzed",
+            "analyzer": "en"
+          }
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "mappings": {
+    "doc": {
+      "_analyzer": {
+        "path": "lang"
+      },
+      "properties": {
+        "title": {
+          "type": "string",
+          "index": "analyzed",
+          "store": "no",
+          "fields": {
+            "default": {
+              "type": "string",
+              "index": "analyzed",
+              "store": "no",
+              "analyzer": "simple"
+            }
+          }
+        },
+        "content": {
+          "type": "string",
+          "index": "analyzed",
+          "store": "no",
+          "fields": {
+            "default": {
+              "type": "string",
+              "index": "analyzed",
+              "store": "no",
+              "analyzer": "simple"
+            }
+          }
+        },
+        "lang": {
+          "type": "string",
+          "index": "not_analyzed",
+          "store": "yes"
+        }
+      }
+    }
+  }
+}

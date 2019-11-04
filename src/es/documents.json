@@ -1,0 +1,53 @@
+{
+  "took": 139,
+  "errors": true,
+  "items": [
+    {
+      "index": {
+        "_index": "addr",
+        "_type": "contact",
+        "_id": "1",
+        "_version": 1,
+        "status": 201
+      }
+    },
+    {
+      "create": {
+        "_index": "addr",
+        "_type": "contact",
+        "_id": "2",
+        "_version": 1,
+        "status": 201
+      }
+    },
+    {
+      "create": {
+        "_index": "addr",
+        "_type": "contact",
+        "_id": "2",
+        "status": 409,
+        "error": "DocumentAlreadyExistsException[[addr][3] [contact][2]: document already exists]"
+      }
+    },
+    {
+      "delete": {
+        "_index": "addr",
+        "_type": "contact",
+        "_id": "4",
+        "_version": 1,
+        "status": 404,
+        "found": false
+      }
+    },
+    {
+      "delete": {
+        "_index": "addr",
+        "_type": "contact",
+        "_id": "1",
+        "_version": 2,
+        "status": 200,
+        "found": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "query": {
+      "match": {
+        "title": "Catch-22"
+      }
+    },
+    "post_filter": {
+      "term": {
+        "year": 1961
+      }
+    }
+  },
+  {
+    "query": {
+      "filtered": {
+        "query": {
+          "match": {
+            "title": "Catch-22"
+          }
+        },
+        "filter": {
+          "term": {
+            "year": 1961
+          }
+        }
+      }
+    }
+  }
+]
