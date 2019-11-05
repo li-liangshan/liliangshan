@@ -33,3 +33,23 @@ SUNION key1 [key2]...  # 返回所有给定集合的并集
 SUNIONSTORE destination key1 [key2]...  # 所有给定集合的并集存储在 destination 集合中
 
 SSCAN key cursor [MATCH pattern] [COUNT count]  # 迭代集合中的元素
+
+# exp:
+# SADD set_key key1 key2 key3 key4
+# SSCAN set_key 0 MATCH key* COUNT 2
+# 可以看到sscan的返回结果，有两部分，第一部分是一个数字，基本是0，有时候是正数。第二部分是结果。
+# 其实第一部分代表一个游标。scan就是以游标为基础，每次使用scan(包括sscan)，以游标0开始，然后命令会返回一个新的游标；如果新的游标不是0，表示遍历还没有结束，要使用新的游标作为参数，继续输入获得后面的结果。
+# 比如下面这个 count 1的时候，遍历没有结束，就会返回非0的游标。后续要使用新的游标来运行命令。
+
+# > smembers myset
+# 1) "one"
+# 2) "two"
+# > sscan myset 0 match * count 1
+# 1) "2"
+# 2) 1) "one"
+# > sscan myset 2 match * count 1
+# 1) "3"
+# 2) 1) "two"
+# > sscan myset 3 match * count 1
+# 1) "0"
+# 2) (empty list or set)

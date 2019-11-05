@@ -1,0 +1,34 @@
+@hostname = localhost
+
+@port = 9200
+
+@host = {{hostname}}:{{port}}
+
+@contentType = application/json
+
+###
+GET http://{{host}} HTTP/1.1
+###
+curl -X GET  http://localhost:9200
+
+###
+GET http://localhost:9200/_search
+
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+###
+GET http://localhost:9200/get-together/_search
+
+{
+  "query":{
+    "filtered":{
+      "query":{
+        "match_all":{}
+      }
+    }
+  }
+}

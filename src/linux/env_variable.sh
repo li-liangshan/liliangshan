@@ -33,5 +33,8 @@ echo "$PATH"
 PATH=$PATH:. #.当前目录
 
 # 数组变量
+array=(one two three four five six seven)
 
+echo "${array[@]}"
+echo "${array[*]}"
 
