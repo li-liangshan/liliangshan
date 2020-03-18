@@ -14,6 +14,11 @@ CC = gcc
 
 VPATH = ../src:../resources
 
+clean:
+	@-rm $(obj) ${obj1} ${obj2} ${bubble} ${bubble_no}
+	@echo "clean done!"
+
+
 build: ${c_example_1}.c ${c_main_1}.c ${bubble}.c ${obj1}.c ${obj2}.c ${bubble_no}.c
 	@${CC} -o $(obj) ${c_example_1}.c ${c_main_1}.c
 	@${CC} -o ${obj1} ${obj1}.c
@@ -61,9 +66,5 @@ build_bubble_no:
 run_bubble_no:
 	@./${bubble_no}
 	@echo 'run ${bubble_no} done!'
-
-clean:
-	@-rm $(obj) ${obj1} ${obj2} ${bubble} ${bubble_no}
-	@echo "clean done!"
 
 

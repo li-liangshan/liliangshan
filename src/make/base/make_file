@@ -1,0 +1,6 @@
+.PHONY: print
+
+print:
+	@echo "this is a print command!"
+
+# this is comment
