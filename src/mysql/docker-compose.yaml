@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7.19
+    ports:
+    - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'admin'
+      TZ: 'Asia/Shanghai'
+    restart: always
+  redis:
+    image: redis:4
+    ports:
+    - "6379:6379"
+    restart: always
+  influxdb:
+    image: influxdb:1.2.4
+    ports:
+    - "8083:8083"
+    - "8086:8086"
+    environment:
+      INFLUXDB_ADMIN_ENABLED: 'true'
+    restart: always
