@@ -1,0 +1,16 @@
+# 如果rbac.create的值为true，将上述创建的service account和角色进行绑定。
+  {{- if .Values.rbac.create -}}
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: {{ template "redis-ha.fullname" . }}
+  labels:
+  {{ include "labels.standard" . | indent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ template "redis-ha.fullname" . }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ template "redis-ha.serviceAccountName" . }}
+  {{- end -}}
